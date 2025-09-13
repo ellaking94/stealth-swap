@@ -1,0 +1,68 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="stealthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bridgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#stealthGradient)" opacity="0.1"/>
+  
+  <!-- Main Shield -->
+  <path d="M60 15L45 25V45C45 55 50 65 60 70C70 65 75 55 75 45V25L60 15Z" 
+        fill="url(#stealthGradient)" 
+        stroke="url(#stealthGradient)" 
+        stroke-width="2"
+        filter="url(#glow)"/>
+  
+  <!-- Inner Shield Pattern -->
+  <path d="M60 20L50 28V45C50 52 55 58 60 62C65 58 70 52 70 45V28L60 20Z" 
+        fill="none" 
+        stroke="white" 
+        stroke-width="1.5" 
+        opacity="0.3"/>
+  
+  <!-- Bridge Connection Lines -->
+  <path d="M35 45L45 45" stroke="url(#bridgeGradient)" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <path d="M75 45L85 45" stroke="url(#bridgeGradient)" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Chain Nodes -->
+  <circle cx="35" cy="45" r="4" fill="url(#stealthGradient)" opacity="0.9"/>
+  <circle cx="85" cy="45" r="4" fill="url(#stealthGradient)" opacity="0.9"/>
+  
+  <!-- Privacy Lock Icon -->
+  <rect x="55" y="50" width="10" height="8" rx="2" fill="white" opacity="0.9"/>
+  <path d="M57 50V47C57 45 58 44 60 44C62 44 63 45 63 47V50" 
+        stroke="white" 
+        stroke-width="1.5" 
+        fill="none" 
+        opacity="0.9"/>
+  
+  <!-- Encryption Dots -->
+  <circle cx="25" cy="35" r="1.5" fill="url(#stealthGradient)" opacity="0.6"/>
+  <circle cx="95" cy="35" r="1.5" fill="url(#stealthGradient)" opacity="0.6"/>
+  <circle cx="25" cy="55" r="1.5" fill="url(#stealthGradient)" opacity="0.6"/>
+  <circle cx="95" cy="55" r="1.5" fill="url(#stealthGradient)" opacity="0.6"/>
+  
+  <!-- Stealth Effect Lines -->
+  <path d="M20 30L30 30" stroke="url(#stealthGradient)" stroke-width="1" opacity="0.4"/>
+  <path d="M90 30L100 30" stroke="url(#stealthGradient)" stroke-width="1" opacity="0.4"/>
+  <path d="M20 60L30 60" stroke="url(#stealthGradient)" stroke-width="1" opacity="0.4"/>
+  <path d="M90 60L100 60" stroke="url(#stealthGradient)" stroke-width="1" opacity="0.4"/>
+</svg>

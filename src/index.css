@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Cross-Chain Bridge Design System
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep Space Background */
+    --background: 240 10% 3.9%;
+    --foreground: 210 40% 98%;
+
+    /* Glass Cards */
+    --card: 240 10% 3.9%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popovers */
+    --popover: 240 3.7% 15.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Neon Primary - Electric Blue */
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Subtle Secondary */
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted Elements */
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent - Cyan Glow */
+    --accent: 186 100% 94%;
+    --accent-foreground: 240 10% 3.9%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders & Inputs */
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 199 89% 48%;
+
+    /* Bridge Specific Colors */
+    --bridge-glow: 199 89% 48%;
+    --bridge-secondary: 271 91% 65%;
+    --data-stream: 186 100% 94%;
+    --privacy-shield: 142 76% 36%;
+
+    /* Gradients */
+    --gradient-bridge: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(271 91% 65%) 100%);
+    --gradient-data: linear-gradient(90deg, hsl(199 89% 48%) 0%, hsl(186 100% 94%) 50%, hsl(271 91% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 3.7% 15.9% / 0.8) 0%, hsl(240 3.7% 15.9% / 0.4) 100%);
+    --gradient-hero: radial-gradient(ellipse at center, hsl(199 89% 48% / 0.15) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-bridge: 0 0 40px hsl(199 89% 48% / 0.3);
+    --shadow-glow: 0 0 20px hsl(199 89% 48% / 0.2);
+    --shadow-card: 0 8px 32px hsl(240 10% 3.9% / 0.8);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Bridge Animation Keyframes */
+@keyframes bridge-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+@keyframes glow-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bridge Component Styles */
+@layer components {
+  .bridge-card {
+    @apply bg-card/80 backdrop-blur-md border border-white/10 rounded-2xl p-6;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .bridge-button {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .bridge-button:hover {
+    box-shadow: var(--shadow-bridge);
+    transform: translateY(-2px);
+  }
+  
+  .chain-selector {
+    @apply bg-secondary/80 hover:bg-secondary border border-white/10 rounded-xl p-4 transition-all duration-300 cursor-pointer;
+  }
+  
+  .chain-selector:hover {
+    box-shadow: var(--shadow-glow);
+    border-color: hsl(var(--primary) / 0.5);
+  }
+  
+  .privacy-indicator {
+    @apply inline-flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30;
+  }
+  
+  .data-stream {
+    animation: data-flow 3s infinite ease-in-out;
+    background: var(--gradient-data);
+  }
+  
+  .bridge-glow {
+    animation: bridge-pulse 2s infinite ease-in-out;
+  }
+  
+  .rotating-border {
+    animation: glow-rotate 3s linear infinite;
+  }
+}
